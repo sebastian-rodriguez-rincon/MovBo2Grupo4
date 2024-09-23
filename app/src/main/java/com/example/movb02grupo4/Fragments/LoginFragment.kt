@@ -54,7 +54,7 @@ class LoginFragment : Fragment() {
         }
 
         btnRegister.setOnClickListener {
-            (activity as MainActivity).navigateTo(RegisterFragment())
+            (activity as MainActivity).loadFragment(RegisterFragment())
         }
         return view
     }
@@ -82,7 +82,6 @@ class LoginFragment : Fragment() {
 
         if (!databaseHelper.checkUser(email)) {
             Toast.makeText(requireContext(), "El usuario no existe", Toast.LENGTH_SHORT).show()
-            // Vaciar campos
             etEmailLogin.text.clear()
             etPasswordLogin.text.clear()
             return
@@ -90,7 +89,7 @@ class LoginFragment : Fragment() {
 
         if (databaseHelper.checkUserCredentials(email, password)) {
             Toast.makeText(requireContext(), "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-            (activity as MainActivity).navigateTo(MenuFragment())
+            (activity as MainActivity).loadFragment(MenuFragment())
         } else {
             Toast.makeText(requireContext(), "Correo o contraseña incorrectos", Toast.LENGTH_SHORT)
                 .show()

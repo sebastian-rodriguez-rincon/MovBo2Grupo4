@@ -92,7 +92,7 @@ class RegisterFragment : Fragment() {
             val result = databaseHelper.addUser(name, lastname, phone, email, password)
             if (result > 0) {
                 Toast.makeText(requireContext(), "Registro exitoso", Toast.LENGTH_SHORT).show()
-                (activity as MainActivity).navigateTo(LoginFragment())
+                (activity as MainActivity).loadFragment(LoginFragment())
             } else {
                 Toast.makeText(requireContext(), "Error al registrar", Toast.LENGTH_SHORT).show()
             }

@@ -13,7 +13,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         const val TABLE_USERS = "users"
         const val COLUMN_EMAIL = "email"
         const val COLUMN_PASSWORD = "password"
-        // Otros columnas
     }
 
     override fun onCreate(db: SQLiteDatabase) {

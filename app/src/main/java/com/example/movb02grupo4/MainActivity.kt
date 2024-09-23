@@ -12,17 +12,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
-            navigateTo(LoginFragment())
+            loadFragment(LoginFragment())
         }
     }
 
-    private fun loadFragment(fragment: Fragment) {
+    fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
     }
 
-    fun navigateTo(fragment: Fragment) {
-        loadFragment(fragment)
-    }
+
 }
