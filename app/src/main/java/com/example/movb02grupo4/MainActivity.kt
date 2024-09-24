@@ -3,6 +3,7 @@ package com.example.movb02grupo4
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.movb02grupo4.Fragments.InicioFragment
 import com.example.movb02grupo4.Fragments.LoginFragment
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
-            loadFragment(LoginFragment())
+            loadFragment(InicioFragment())
         }
     }
 

@@ -27,6 +27,6 @@ class MenuFragment : Fragment() {
     }
 
     private fun logoutUser() {
-        (activity as MainActivity).navigateTo(LoginFragment())
+        (activity as MainActivity).loadFragment(LoginFragment())
     }
 }
