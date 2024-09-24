@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.movb02grupo4.DataBase.DatabaseHelper
@@ -19,6 +20,8 @@ class LoginFragment : Fragment() {
 
     private lateinit var etEmailLogin: EditText
     private lateinit var etPasswordLogin: EditText
+    private lateinit var continuar: TextView
+    private lateinit var cancelar: TextView
     private lateinit var databaseHelper: DatabaseHelper
 
     override fun onCreateView(
@@ -29,8 +32,8 @@ class LoginFragment : Fragment() {
 
         etEmailLogin = view.findViewById(R.id.etEmailLogin)
         etPasswordLogin = view.findViewById(R.id.etPasswordLogin)
-        val btnLogin = view.findViewById<Button>(R.id.btnLogin)
-        val btnRegister = view.findViewById<Button>(R.id.btnRegister)
+        continuar = view.findViewById(R.id.continuar)
+        cancelar = view.findViewById(R.id.cancelar)
 
         databaseHelper = DatabaseHelper(requireContext())
 
@@ -48,13 +51,13 @@ class LoginFragment : Fragment() {
             false
         }
 
-        btnLogin.setOnClickListener {
+        continuar.setOnClickListener {
             hideKeyboard()
             loginUser()
         }
 
-        btnRegister.setOnClickListener {
-            (activity as MainActivity).loadFragment(RegisterFragment())
+        cancelar.setOnClickListener {
+            (activity as MainActivity).loadFragment(InicioFragment())
         }
         return view
     }
