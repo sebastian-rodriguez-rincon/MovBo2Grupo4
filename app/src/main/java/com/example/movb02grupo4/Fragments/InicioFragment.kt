@@ -25,11 +25,11 @@ class InicioFragment : Fragment() {
         login = view.findViewById(R.id.login)
         register = view.findViewById(R.id.register)
 
-        login.setOnClickListener{
+        login.setOnClickListener {
             (activity as MainActivity).loadFragment(LoginFragment())
         }
 
-        register.setOnClickListener{
+        register.setOnClickListener {
             (activity as MainActivity).loadFragment(RegisterFragment())
         }
 

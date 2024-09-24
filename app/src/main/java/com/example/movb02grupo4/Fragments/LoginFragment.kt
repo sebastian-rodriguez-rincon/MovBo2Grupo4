@@ -37,6 +37,15 @@ class LoginFragment : Fragment() {
 
         databaseHelper = DatabaseHelper(requireContext())
 
+        continuar.setOnClickListener {
+            hideKeyboard()
+            loginUser()
+        }
+
+        cancelar.setOnClickListener {
+            (activity as MainActivity).loadFragment(InicioFragment())
+        }
+
         view.setOnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
                 val focusedView = activity?.currentFocus
@@ -51,14 +60,6 @@ class LoginFragment : Fragment() {
             false
         }
 
-        continuar.setOnClickListener {
-            hideKeyboard()
-            loginUser()
-        }
-
-        cancelar.setOnClickListener {
-            (activity as MainActivity).loadFragment(InicioFragment())
-        }
         return view
     }
 

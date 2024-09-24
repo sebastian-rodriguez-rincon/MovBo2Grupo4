@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.movb02grupo4.DataBase.DatabaseHelper
@@ -23,6 +24,9 @@ class RegisterFragment : Fragment() {
     private lateinit var etPhone: EditText
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
+    private lateinit var etMascota: EditText
+    private lateinit var continuar: TextView
+    private lateinit var cancelar: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,12 +40,17 @@ class RegisterFragment : Fragment() {
         etPhone = view.findViewById(R.id.etPhone)
         etEmail = view.findViewById(R.id.etEmail)
         etPassword = view.findViewById(R.id.etPassword)
+        etMascota = view.findViewById(R.id.etMascota)
+        continuar = view.findViewById<Button>(R.id.continuar)
+        cancelar = view.findViewById<Button>(R.id.cancelar)
 
-        val btnRegister = view.findViewById<Button>(R.id.btnRegister)
-
-        btnRegister.setOnClickListener {
+        continuar.setOnClickListener {
             hideKeyboard()
             registerUser()
+        }
+
+        cancelar.setOnClickListener {
+            (activity as MainActivity).loadFragment(InicioFragment())
         }
 
         view.setOnTouchListener { v, event ->
