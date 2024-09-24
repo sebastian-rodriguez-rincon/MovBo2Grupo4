@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_perfil"
+        android:title="Perfil"
+        android:titleTextAppearance="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"/>
+    <item
+        android:id="@+id/nav_mascotas"
+        android:title="Mascotas" />
+    <item
+        android:id="@+id/nav_videos"
+        android:title="Videos" />
+    <item
+        android:id="@+id/nav_web"
+        android:title="Pagina Web"/>
+    <item
+        android:id="@+id/nav_opciones"
+        android:title="Mas opciones"/>
+</menu>
