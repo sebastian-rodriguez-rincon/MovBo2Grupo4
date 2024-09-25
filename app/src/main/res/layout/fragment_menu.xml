@@ -16,7 +16,7 @@
             android:id="@+id/menu_icon"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:src="@drawable/exit"
+            android:src="@drawable/menu"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
