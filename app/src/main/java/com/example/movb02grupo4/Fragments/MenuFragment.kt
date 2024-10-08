@@ -63,6 +63,9 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
              R.id.nav_videos -> {
                 (activity as MainActivity).loadFragment(VideoFragment())
             }
+            R.id.nav_mascotas -> {
+                (activity as MainActivity).loadFragment(GalleryFragment())
+            }
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)
