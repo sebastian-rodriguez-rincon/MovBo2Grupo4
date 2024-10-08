@@ -60,17 +60,9 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            /* R.id.nav_inicio -> {
-                (activity as MainActivity).loadFragment(InicioFragment())
+             R.id.nav_videos -> {
+                (activity as MainActivity).loadFragment(VideoFragment())
             }
-            R.id.nav_perfil -> {
-                // Cargar el fragmento del perfil
-                (activity as MainActivity).loadFragment(PerfilFragment())
-            }
-            R.id.nav_ajustes -> {
-                // Cargar el fragmento de ajustes
-                (activity as MainActivity).loadFragment(AjustesFragment())
-            } */
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)
