@@ -48,7 +48,6 @@ class RegisterFragment : Fragment() {
         etPhone = view.findViewById(R.id.etPhone)
         etEmail = view.findViewById(R.id.etEmail)
         etPassword = view.findViewById(R.id.etPassword)
-        etMascota = view.findViewById(R.id.etMascota)
         continuar = view.findViewById<Button>(R.id.continuar)
         cancelar = view.findViewById<Button>(R.id.cancelar)
 

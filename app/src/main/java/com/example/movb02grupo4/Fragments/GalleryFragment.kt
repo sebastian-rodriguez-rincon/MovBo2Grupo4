@@ -5,16 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movb02grupo4.Adapters.GalleryAdapter
 import com.example.movb02grupo4.ListGallery
+import com.example.movb02grupo4.MainActivity
 import com.example.movb02grupo4.R
 
 class GalleryFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var galleryAdapter: GalleryAdapter
+    private lateinit var back: ImageView
     private val almacenados: MutableList<ListGallery> = mutableListOf()
 
     override fun onCreateView(
@@ -24,11 +27,16 @@ class GalleryFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_gallery, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerViewGallery)
+        back = view.findViewById(R.id.back)
         recyclerView.layoutManager = GridLayoutManager(context, 2)
         galleryAdapter = GalleryAdapter(requireContext(), almacenados)
         recyclerView.adapter = galleryAdapter
 
         loadImages()
+
+        back.setOnClickListener{
+            (activity as MainActivity).loadFragment(MenuFragment())
+        }
 
         return view
     }

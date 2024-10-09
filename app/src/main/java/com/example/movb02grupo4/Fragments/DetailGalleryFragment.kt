@@ -38,7 +38,7 @@ class DetailGalleryFragment(private var nombre: String, private var edad: String
         age.text = "Edad: " + edad
 
         back.setOnClickListener{
-            (activity as MainActivity).loadFragment(MenuFragment())
+            (activity as MainActivity).loadFragment(GalleryFragment())
         }
 
         return view

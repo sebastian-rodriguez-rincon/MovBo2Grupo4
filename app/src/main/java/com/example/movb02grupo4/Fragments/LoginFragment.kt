@@ -101,10 +101,19 @@ class LoginFragment : Fragment() {
 
         if (databaseHelper.checkUserCredentials(email, password)) {
             Toast.makeText(requireContext(), "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+            guardarEmailEnSharedPreferences(requireContext(), email)
             (activity as MainActivity).loadFragment(MenuFragment())
         } else {
             Toast.makeText(requireContext(), "Correo o contraseña incorrectos", Toast.LENGTH_SHORT)
                 .show()
+        }
+    }
+
+    fun guardarEmailEnSharedPreferences(context: Context, email: String) {
+        val sharedPref = context.getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
+        with(sharedPref.edit()) {
+            putString("email", email)
+            apply()
         }
     }
 }

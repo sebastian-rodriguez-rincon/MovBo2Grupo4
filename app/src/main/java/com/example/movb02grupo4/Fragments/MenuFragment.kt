@@ -16,7 +16,7 @@ import com.example.movb02grupo4.MainActivity
 import com.example.movb02grupo4.R
 import com.google.android.material.navigation.NavigationView
 
-class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener {
+class MenuFragment() : Fragment(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var logout: ImageView
     private lateinit var menuIcon: ImageView
@@ -60,11 +60,14 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-             R.id.nav_videos -> {
-                (activity as MainActivity).loadFragment(VideoFragment())
+             R.id.nav_perfil-> {
+                (activity as MainActivity).loadFragment(PerfilFragment())
             }
             R.id.nav_mascotas -> {
                 (activity as MainActivity).loadFragment(GalleryFragment())
+            }
+            R.id.nav_videos -> {
+                (activity as MainActivity).loadFragment(VideoFragment())
             }
         }
 
