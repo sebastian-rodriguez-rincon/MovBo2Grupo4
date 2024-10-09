@@ -31,7 +31,7 @@ class VideoFragment : Fragment() {
         mediaController.setAnchorView(videoView)
         videoView.setMediaController(mediaController)
 
-        val videoUri = Uri.parse("https://www.example.com/path/to/video.mp4")
+        val videoUri = Uri.parse("https://www.w3schools.com/html/mov_bbb.mp4")
 
         videoView.setVideoURI(videoUri)
 
