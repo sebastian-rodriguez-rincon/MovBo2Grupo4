@@ -72,6 +72,9 @@ class MenuFragment() : Fragment(), NavigationView.OnNavigationItemSelectedListen
             R.id.nav_web -> {
                 (activity as MainActivity).loadFragment(UrlWebViewFragment())
             }
+            R.id.nav_opciones -> {
+                (activity as MainActivity).loadFragment(PostActionsFragment())
+            }
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)
